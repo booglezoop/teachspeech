@@ -1,0 +1,21 @@
+---
+layout: base.njk
+pagination:
+  data: specialists
+  size: 1
+  alias: s
+permalink: "specialisti/{{ s.slug }}/index.html"
+eleventyComputed:
+  title: "{{ s.name or 'Специалист' }}"
+---
+{% from "macros.njk" import v %}
+<section><div class="wrap">
+<p><a href="/#specialisti">&larr; Всички специалисти</a></p>
+<div class="person" data-p="{{ s.n }}"><div class="profile-head" style="--c: var(--c{{ s.n }})">
+<h1>{{ v(s.name, "Име") }}</h1><p class="role">{{ v(s.role, "роля / квалификация") }}</p>
+<ul class="tags">{% for a in s.areas %}<li>{{ a }}</li>{% else %}<li>{{ v("", "области на работа") }}</li>{% endfor %}</ul>
+<div class="actions"><a class="btn" href="tel:{{ site.phoneHref }}">Обади се</a><a class="btn alt" href="#cena">Цени</a></div></div></div>
+<div class="cols" style="margin-top:36px"><div><h2>За специалиста</h2><p>{{ v(s.bio, "кратко представяне – с одобрение") }}</p>
+<h2 id="cena">Цени и първа среща</h2><p>{{ v("", "цени, продължителност, как се записва час") }}</p></div>
+<aside class="card"><h3>Свържете се</h3><p>Телефон: <a href="tel:{{ site.phoneHref }}">{{ v(site.phone, "телефон") }}</a></p><p>Онлайн сесии: {{ v("", "да/не") }}</p><p>Адрес: {{ v(site.address, "адрес") }}</p></aside></div>
+</div></section>
