@@ -484,3 +484,10 @@ footer a {
 .svc li {
   margin-bottom: 0.6em;
 }
+@media (min-width: 760px) {
+  .cols > aside {
+    align-self: start;
+    position: sticky;
+    top: 88px;
+  }
+}
