@@ -31,7 +31,7 @@
       <div class="wrap">
         <p><strong>{{ v(site.name, "Име на сайта") }}</strong><br />Адрес: {{ v(site.address, "адрес") }}<br />Работно време: {{ v(site.hours, "работно време") }}</p>
         <p>{% for s in specialists %}{{ s.name }}: <a href="tel:{{ s.phoneHref }}">{{ s.phone }}</a><br />{% endfor %}</p>
-        <p>Всеки специалист работи самостоятелно. <a href="/#specialisti">Към специалистите</a></p>
+        <p><a href="/#specialisti">Към специалистите</a></p>
         <p>&copy; {{ page.date.getFullYear() }} Всички права запазени.</p>
       </div>
     </footer>

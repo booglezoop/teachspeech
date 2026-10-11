@@ -413,3 +413,44 @@ footer a {
 .callbar .callmenu summary {
   width: 100%;
 }
+.steps {
+  list-style: none;
+  counter-reset: s;
+  padding: 0;
+  margin: 0 0 24px;
+  display: grid;
+  gap: 16px;
+}
+.steps li {
+  counter-increment: s;
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px 20px 20px 72px;
+}
+.steps li::before {
+  content: counter(s);
+  position: absolute;
+  left: 20px;
+  top: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+}
+.steps h3 {
+  margin-bottom: 0.3em;
+}
+@media (min-width: 760px) {
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .steps li {
+    padding: 70px 18px 18px;
+  }
+}
