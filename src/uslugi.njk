@@ -1,0 +1,18 @@
+---
+layout: base.njk
+title: Услуги – логопед и психолог Пловдив
+description: Консултиране, диагностика и терапия при артикулационни и езикови нарушения, късно проговаряне, затруднения в комуникацията и ученето; психологична терапия за деца, възрастни и семейства.
+permalink: /uslugi/
+---
+<section class="hero"><div class="wrap"><h1>Услуги</h1>
+<p>Първата стъпка винаги е среща за консултиране, на която присъстват родителят, детето и специалистът. <a href="/#specialisti">Изберете специалист</a>.</p>
+<div class="actions">{% for g in services %}<a class="btn alt" href="#{{ g.id }}">{{ g.title }}</a>{% endfor %}</div></div></section>
+{% for g in services %}
+<section id="{{ g.id }}"{% if loop.index0 % 2 == 0 %} class="alt-bg"{% endif %}><div class="wrap"><h2>Услуги – {{ g.title | lower }}</h2>
+<div class="grid three">
+{% for b in g.blocks %}<div class="card svc"><h3>{{ b.title }}</h3>
+{% if b.lead %}<p>{{ b.lead }}</p>{% endif %}
+<ul>{% for i in b.items %}<li>{{ i }}</li>{% endfor %}</ul>
+{% if b.after %}<p>{{ b.after }}</p>{% endif %}</div>{% endfor %}
+</div></div></section>
+{% endfor %}

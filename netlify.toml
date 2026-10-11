@@ -17,3 +17,55 @@
   for = "/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirects from the old site (301). Test after deploy: curl -I <url>
+[[redirects]]
+  from = "/team"
+  to = "/#specialisti"
+  status = 301
+
+[[redirects]]
+  from = "/about_us"
+  to = "/#specialisti"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/#kontakti"
+  status = 301
+
+[[redirects]]
+  from = "/parents"
+  to = "/uslugi/"
+  status = 301
+
+[[redirects]]
+  from = "/логопед-юрка-донева"
+  to = "/specialisti/yurka-doneva/"
+  status = 301
+
+[[redirects]]
+  from = "/%D0%BB%D0%BE%D0%B3%D0%BE%D0%BF%D0%B5%D0%B4-%D1%8E%D1%80%D0%BA%D0%B0-%D0%B4%D0%BE%D0%BD%D0%B5%D0%B2%D0%B0"
+  to = "/specialisti/yurka-doneva/"
+  status = 301
+
+[[redirects]]
+  from = "/логопед-светослава-чаушева"
+  to = "/specialisti/svetoslava-chausheva/"
+  status = 301
+
+[[redirects]]
+  from = "/%D0%BB%D0%BE%D0%B3%D0%BE%D0%BF%D0%B5%D0%B4-%D1%81%D0%B2%D0%B5%D1%82%D0%BE%D1%81%D0%BB%D0%B0%D0%B2%D0%B0-%D1%87%D0%B0%D1%83%D1%88%D0%B5%D0%B2%D0%B0"
+  to = "/specialisti/svetoslava-chausheva/"
+  status = 301
+
+[[redirects]]
+  from = "/психолог-ива-бънева"
+  to = "/specialisti/iva-baneva/"
+  status = 301
+
+[[redirects]]
+  from = "/%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3-%D0%B8%D0%B2%D0%B0-%D0%B1%D1%8A%D0%BD%D0%B5%D0%B2%D0%B0"
+  to = "/specialisti/iva-baneva/"
+  status = 301
+
