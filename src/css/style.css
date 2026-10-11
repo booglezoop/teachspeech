@@ -477,3 +477,10 @@ footer a {
   border: 0;
   border-radius: 12px;
 }
+.svc ul {
+  padding-left: 1.2em;
+  margin: 0;
+}
+.svc li {
+  margin-bottom: 0.6em;
+}
