@@ -94,4 +94,25 @@ title: Логопед и психолог Пловдив
 <section id="kontakti" class="alt-bg"><div class="wrap"><h2>Контакти</h2>
 <div class="cols"><div>{% for s in specialists %}<p><strong>{{ s.name }}:</strong> <a href="tel:{{ s.phoneHref }}">{{ s.phone }}</a></p>{% endfor %}<p><strong>Адрес:</strong> {{ v(site.address, "адрес") }}</p><p><strong>Как да стигнете:</strong> {{ v("", "вход, етаж, паркиране") }}</p>
 <div class="actions"><a class="btn alt" href="https://www.google.com/maps/search/?api=1&amp;query={{ (site.mapQuery or site.address) | urlencode }}">Навигация</a></div></div>
-<div class="note">Тук добавете карта.</div></div></div></section>
+{% if site.mapEmbedUrl %}
+<div class="map" data-src="{{ site.mapEmbedUrl }}">
+  <button class="btn alt" type="button">Покажи картата</button>
+  <p class="map-note">Картата се зарежда от OpenStreetMap.</p>
+</div>
+{% else %}
+<div class="note">Тук добавете карта.</div>
+{% endif %}
+<script>
+  document.querySelectorAll(".map").forEach(function (m) {
+    var b = m.querySelector("button");
+    if (!b) return;
+    b.addEventListener("click", function () {
+      var f = document.createElement("iframe");
+      f.src = m.dataset.src;
+      f.title = "Карта с местоположението на Мечо Пух";
+      f.loading = "lazy";
+      f.referrerPolicy = "no-referrer";
+      m.replaceChildren(f);
+    });
+  });
+</script>
