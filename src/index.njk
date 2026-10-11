@@ -1,11 +1,11 @@
 ---
 layout: base.njk
-title: Логопеди и психолог
+title: Логопед и психолог Пловдив
 ---
 {% from "macros.njk" import v %}
 <section class="hero"><div class="wrap"><h1>Логопедична и психологична подкрепа в Пловдив</h1>
 <p>За деца, възрастни и семейства. Разгледайте с какво работи всеки специалист и се свържете директно с него. </p>
-<div class="actions"><a class="btn" href="tel:{{ site.phoneHref }}">Избери специалист</a><a class="btn alt" href="#pomosht">С какво можем да помогнем?</a></div></div></section>
+<div class="actions"><a class="btn" href="#specialisti">Избери специалист</a><a class="btn alt" href="#pomosht">С какво можем да помогнем?</a></div></div></section>
 
 <section id="pomosht" class="help alt-bg">
   <div class="wrap">
@@ -70,7 +70,7 @@ title: Логопеди и психолог
 {% for s in specialists %}
 <article class="card person" data-p="{{ s.n }}"><div class="avatar">снимка</div><h3>{{ v(s.name, "Име") }}</h3><p class="role">{{ v(s.role, "роля") }}</p>
 <ul class="tags">{% for a in s.areas %}<li>{{ a }}</li>{% else %}<li>{{ v("", "области на работа") }}</li>{% endfor %}</ul>
-<div class="actions"><a class="btn" href="tel:{{ site.phoneHref }}">Обади се</a><a class="btn alt" href="/specialisti/{{ s.slug }}/">Профил</a></div></article>
+<div class="actions"><a class="btn" href="tel:{{ s.phoneHref }}">Обади се</a><a class="btn alt" href="/specialisti/{{ s.slug }}/">Профил</a></div></article>
 {% endfor %}
 </div></div></section>
 
@@ -85,6 +85,6 @@ title: Логопеди и психолог
 {# Отзиви: добавете секция само с реални отзиви и съгласие. #}
 
 <section id="kontakti" class="alt-bg"><div class="wrap"><h2>Контакти</h2>
-<div class="cols"><div><p><strong>Телефон:</strong> <a href="tel:{{ site.phoneHref }}">{{ v(site.phone, "телефон") }}</a></p><p><strong>Адрес:</strong> {{ v(site.address, "адрес") }}</p><p><strong>Как да стигнете:</strong> {{ v("", "вход, етаж, паркиране") }}</p>
-<div class="actions"><a class="btn" href="tel:{{ site.phoneHref }}">Обади се</a><a class="btn alt" href="https://www.google.com/maps/search/?api=1&amp;query={{ (site.mapQuery or site.address) | urlencode }}">Навигация</a></div></div>
+<div class="cols"><div>{% for s in specialists %}<p><strong>{{ s.name }}:</strong> <a href="tel:{{ s.phoneHref }}">{{ s.phone }}</a></p>{% endfor %}<p><strong>Адрес:</strong> {{ v(site.address, "адрес") }}</p><p><strong>Как да стигнете:</strong> {{ v("", "вход, етаж, паркиране") }}</p>
+<div class="actions"><a class="btn alt" href="https://www.google.com/maps/search/?api=1&amp;query={{ (site.mapQuery or site.address) | urlencode }}">Навигация</a></div></div>
 <div class="note">Тук добавете карта.</div></div></div></section>
