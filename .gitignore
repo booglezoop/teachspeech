@@ -3,3 +3,6 @@ _site/
 .DS_Store
 .env
 .netlify/
+
+# Local environment secrets
+.env.local
