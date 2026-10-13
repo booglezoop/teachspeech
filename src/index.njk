@@ -3,8 +3,8 @@ layout: base.njk
 title: Логопед и психолог Пловдив
 ---
 {% from "macros.njk" import v %}
-<section class="hero"><div class="wrap"><h1>Логопедична и психологична подкрепа в Пловдив</h1>
-<p>За деца, възрастни и семейства. Разгледайте с какво работи всеки специалист и се свържете директно с него. </p>
+<section class="hero"><div class="wrap"><p class="eyebrow">{{ site.locality }} · {{ site.streetAddress }}</p><h1>Логопедична и психологична подкрепа <mark>в Пловдив</mark></h1>
+<p class="lead">За деца, възрастни и семейства. Разгледайте с какво работи всеки специалист и се свържете директно с него. </p>
 <div class="actions"><a class="btn" href="#specialisti">Избери специалист</a><a class="btn alt" href="#pomosht">С какво можем да помогнем?</a></div></div></section>
 
 <section id="pomosht" class="help alt-bg">
@@ -74,6 +74,8 @@ title: Логопед и психолог Пловдив
 {% endfor %}
 </div></div></section>
 
+{% if gallery.length %}<section id="prostranstvo"><div class="wrap"><h2>Пространството</h2>
+<div class="gallery">{% for g in gallery %}<figure><img src="{{ g.src }}" alt="{{ g.alt }}" width="{{ g.w }}" height="{{ g.h }}" loading="lazy" />{% if g.caption %}<figcaption>{{ g.caption }}</figcaption>{% endif %}</figure>{% endfor %}</div></div></section>{% endif %}
 <section id="parva-sreshta" class="alt-bg"><div class="wrap"><h2>Как протича първата среща</h2>
 <ol class="steps">
 <li><h3>Консултация</h3><p>На срещата присъстват родителят, детето и специалистът, при когото сте записали час. Целта е да научим как се е развивало детето до момента и какви притеснения Ви водят при нас.</p></li>
