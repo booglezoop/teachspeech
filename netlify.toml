@@ -69,3 +69,8 @@
   to = "/specialisti/iva-baneva/"
   status = 301
 
+
+[[redirects]]
+  from = "/faq"
+  to = "/#parva-sreshta"
+  status = 301

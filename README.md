@@ -27,3 +27,9 @@ npm test         # prettier check + build + HTML validation (same as CI)
 - No invented claims, credentials, prices or reviews. Real testimonials only with written consent.
 - No photos of children.
 - Keep old URLs alive (redirects in `netlify.toml`) once the real domain is connected.
+
+## Launch switch (SEO)
+
+While `launched` is `false` in `src/_data/site.json`, every page is `noindex` and `robots.txt` blocks all crawlers, so the preview site cannot compete with the live site in Google.
+At launch: set `url` to the final domain (e.g. `https://www.teachspeechbg.com`) and `launched` to `true`, then submit `/sitemap.xml` in Google Search Console.
+`src/images/og-default.png` is a placeholder link-preview image; replace it with a branded 1200x630 image.
