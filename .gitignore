@@ -2,4 +2,6 @@ node_modules/
 _site/
 .DS_Store
 .env
+.env.*
+!.env.example
 .netlify/
