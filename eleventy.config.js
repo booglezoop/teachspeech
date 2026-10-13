@@ -4,7 +4,7 @@ export default function (eleventyConfig) {
   // Self-hosted fonts (no requests to Google; GDPR-friendly)
   for (const [pkg, weights] of [
     ["inter", [400, 600]],
-    ["literata", [600, 700]],
+    ["literata", [400, 600, 700]],
   ]) {
     for (const w of weights) {
       for (const sub of ["latin", "cyrillic"]) {
