@@ -491,3 +491,44 @@ footer a {
     top: 88px;
   }
 }
+
+/* Specialist photos and Facebook links */
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+.fb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.fb:hover {
+  text-decoration: underline;
+}
+.profile-head {
+  display: grid;
+  gap: 20px;
+  align-items: center;
+}
+.face {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+@media (min-width: 600px) {
+  .profile-head {
+    grid-template-columns: 140px 1fr;
+  }
+}
