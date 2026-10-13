@@ -1,0 +1,61 @@
+---
+layout: false
+permalink: /internal/index.html
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="same-origin">
+    <title>Вътрешен календар — Мечо Пух</title>
+    <link rel="stylesheet" href="/css/internal.css">
+  </head>
+  <body>
+    <main class="internal-shell">
+      <header class="internal-header">
+        <a href="/" aria-label="Към публичния сайт">
+          <img src="/images/mecho-puh-vector.svg" alt="Мечо Пух" width="48" height="48">
+        </a>
+        <div>
+          <p class="eyebrow">Мечо Пух</p>
+          <h1>Вътрешен календар</h1>
+        </div>
+      </header>
+
+      <section id="login-panel" class="panel" aria-labelledby="login-title">
+        <h2 id="login-title">Вход за екипа</h2>
+        <p>Тази зона е само за оторизирани членове на екипа.</p>
+        <form id="login-form">
+          <label for="email">Имейл</label>
+          <input id="email" name="email" type="email" autocomplete="username" required>
+          <label for="password">Парола</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+          <button type="submit">Вход</button>
+          <p id="login-error" class="message" role="alert" hidden></p>
+        </form>
+      </section>
+
+      <section id="app-panel" class="panel" hidden aria-labelledby="welcome-title">
+        <div class="app-heading">
+          <div>
+            <p class="eyebrow">Успешен вход</p>
+            <h2 id="welcome-title">Добре дошли</h2>
+            <p id="account-summary"></p>
+          </div>
+          <button id="sign-out" class="secondary" type="button">Изход</button>
+        </div>
+        <p id="app-message" class="message" role="status"></p>
+        <div id="calendar-placeholder" class="calendar-placeholder">
+          <h3>Календарът предстои</h3>
+          <p>Входът и проверката на ролята са готови. Следващата стъпка е зареждане на разрешените срещи и график.</p>
+        </div>
+      </section>
+
+      <p class="security-note">Достъпът до данните се контролира от Supabase. Не използвайте тази система с реални данни, докато всички проверки на правата не бъдат завършени.</p>
+    </main>
+    <script type="module" src="/js/internal.js"></script>
+  </body>
+</html>

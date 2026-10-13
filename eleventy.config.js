@@ -1,6 +1,7 @@
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/js");
   // Self-hosted fonts (no requests to Google; GDPR-friendly)
   for (const [pkg, weights] of [
     ["inter", [400, 600]],

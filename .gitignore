@@ -6,3 +6,5 @@ _site/
 
 # Local environment secrets
 .env.local
+
+/src/js/internal.js
