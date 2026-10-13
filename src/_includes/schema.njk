@@ -1,0 +1,23 @@
+{% macro practice(s) %}{
+  "@type": "LocalBusiness",
+  "@id": {{ (site.url + "/specialisti/" + s.slug + "/#practice") | dump | safe }},
+  "name": {{ (s.titleRole + " " + s.name) | dump | safe }},
+  "url": {{ (site.url + "/specialisti/" + s.slug + "/") | dump | safe }},
+  "telephone": {{ s.phoneHref | dump | safe }},
+  "image": {{ (site.url + s.photo) | dump | safe }},
+  "address": { "@type": "PostalAddress", "streetAddress": {{ site.streetAddress | dump | safe }}, "addressLocality": {{ site.locality | dump | safe }}, "addressCountry": {{ site.country | dump | safe }} },
+  "geo": { "@type": "GeoCoordinates", "latitude": {{ site.lat }}, "longitude": {{ site.lng }} },
+  "sameAs": [{{ s.facebook | dump | safe }}]
+}{% endmacro %}
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [
+{% if page.url == "/" %}
+{ "@type": "WebSite", "@id": {{ (site.url + "/#website") | dump | safe }}, "name": {{ site.name | dump | safe }}, "url": {{ (site.url + "/") | dump | safe }}, "inLanguage": "bg" },
+{% for sp in specialists %}{{ practice(sp) }}{% if not loop.last %},{% endif %}{% endfor %}
+{% elif s %}
+{{ practice(s) }}
+{% else %}
+{ "@type": "WebSite", "@id": {{ (site.url + "/#website") | dump | safe }}, "name": {{ site.name | dump | safe }}, "url": {{ (site.url + "/") | dump | safe }}, "inLanguage": "bg" }
+{% endif %}
+]}
+</script>

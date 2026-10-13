@@ -3,5 +3,13 @@
   "address": "бул. 6-ти септември 107, ет. 1 и ет. 2, гр. Пловдив",
   "hours": "пон. - пет. / 09:00 - 18:30 ч.",
   "mapQuery": "",
-  "mapEmbedUrl": "https://www.openstreetmap.org/export/embed?bbox=24.7334298491478%2C42.14748832524435%2C24.73868697881699%2C42.15001385171362&layer=mapnik&marker=42.14875110159579%2C24.73605841398239"
+  "mapEmbedUrl": "https://www.openstreetmap.org/export/embed?bbox=24.7334298491478%2C42.14748832524435%2C24.73868697881699%2C42.15001385171362&layer=mapnik&marker=42.14875110159579%2C24.73605841398239",
+  "url": "https://teachspeech.netlify.app",
+  "launched": false,
+  "streetAddress": "бул. 6-ти септември 107",
+  "locality": "Пловдив",
+  "country": "BG",
+  "lat": 42.14875,
+  "lng": 24.73606,
+  "defaultDescription": "Логопеди и психолог в Пловдив: консултиране, диагностика и терапия за деца, възрастни и семейства."
 }
