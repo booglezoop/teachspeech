@@ -34,7 +34,7 @@
           />
         </a>
         <nav aria-label="Основно меню">
-          <a href="/#pomosht">С какво помагаме</a><a href="/#specialisti">Специалисти</a><a href="/uslugi/">Услуги</a><a href="/#ceni">Цени</a><a href="/#kontakti">Контакти</a>
+          <a href="/#pomosht">С какво помагаме</a><a href="/#specialisti">Специалисти</a><a href="/uslugi/">Услуги</a><a href="/#ceni">Цени</a><a href="/#kontakti">Контакти</a><a href="/blog/">Блог</a>
         </nav>
         <details class="callmenu"><summary class="btn">Обади се</summary><ul>{% for s in specialists %}<li><a href="tel:{{ s.phoneHref }}"><strong>{{ s.name }}</strong><span>{{ s.phone }}</span></a></li>{% endfor %}</ul></details>
       </div>
@@ -44,7 +44,7 @@
       <div class="wrap">
         <p><strong>{{ v(site.name, "Име на сайта") }}</strong><br />Адрес: {{ v(site.address, "адрес") }}<br />Работно време: {{ v(site.hours, "работно време") }}</p>
         <p>{% for s in specialists %}{{ s.name }}: <a href="tel:{{ s.phoneHref }}">{{ s.phone }}</a><br />{% endfor %}</p>
-        <p><a href="/#specialisti">Към специалистите</a></p>
+        <p><a href="/#specialisti">Към специалистите</a><br /><a href="/blog/">Блог</a></p>
         <p>&copy; {{ page.date.getFullYear() }} Всички права запазени.</p>
       </div>
     </footer>

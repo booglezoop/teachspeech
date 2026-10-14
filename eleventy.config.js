@@ -15,5 +15,19 @@ export default function (eleventyConfig) {
       }
     }
   }
+  // Blog: posts live in src/blog/*.md, newest first (ISO date strings sort correctly)
+  eleventyConfig.addCollection("posts", (api) =>
+    api
+      .getFilteredByGlob("src/blog/*.md")
+      .sort((a, b) => b.data.published.localeCompare(a.data.published)),
+  );
+  eleventyConfig.addFilter("bgDate", (iso) =>
+    new Intl.DateTimeFormat("bg-BG", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
+    }).format(new Date(`${iso}T00:00:00Z`)),
+  );
   return { dir: { input: "src", output: "_site" }, templateFormats: ["njk", "md", "html"] };
 }
