@@ -817,3 +817,25 @@ footer .wrap {
   color: var(--muted);
   font-size: 1.15rem;
 }
+
+.post-body {
+  max-width: 68ch;
+}
+.post-body h2 {
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  margin: 2em 0 0.6em;
+}
+.post-body p,
+.post-body li {
+  line-height: 1.7;
+}
+.post-body ul {
+  padding-left: 1.25em;
+  margin: 1em 0;
+}
+.post-body li {
+  margin: 0.6em 0;
+}
+.post .meta {
+  margin-bottom: 1.6em;
+}

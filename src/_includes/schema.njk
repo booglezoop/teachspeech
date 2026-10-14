@@ -15,7 +15,7 @@
 { "@type": "WebSite", "@id": {{ (site.url + "/#website") | dump | safe }}, "name": {{ site.name | dump | safe }}, "url": {{ (site.url + "/") | dump | safe }}, "inLanguage": "bg" },
 {% for sp in specialists %}{{ practice(sp) }}{% if not loop.last %},{% endif %}{% endfor %}
 {% elif isPost %}
-{ "@type": "Article", "@id": {{ (site.url + page.url + "#article") | dump | safe }}, "headline": {{ title | dump | safe }}, "datePublished": {{ published | dump | safe }}, "inLanguage": "bg", "mainEntityOfPage": {{ (site.url + page.url) | dump | safe }}, "author": [{% for a in authorList %}{ "@type": "Person", "name": {{ a.name | dump | safe }}, "url": {{ (site.url + "/specialisti/" + a.slug + "/") | dump | safe }} }{% if not loop.last %},{% endif %}{% endfor %}] }
+{ "@type": "Article", "@id": {{ (site.url + page.url + "#article") | dump | safe }}, "headline": {{ title | dump | safe }}, "datePublished": {{ published | dump | safe }}, "inLanguage": "bg", "mainEntityOfPage": {{ (site.url + page.url) | dump | safe }} {% if authorList.length %}, "author": [{% for a in authorList %}{ "@type": "Person", "name": {{ a.name | dump | safe }}, "url": {{ (site.url + "/specialisti/" + a.slug + "/") | dump | safe }} }{% if not loop.last %},{% endif %}{% endfor %}]{% endif %} }
 {% elif s %}
 {{ practice(s) }}
 {% else %}

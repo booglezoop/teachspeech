@@ -74,3 +74,39 @@
   from = "/faq"
   to = "/#parva-sreshta"
   status = 301
+
+# Alias URLs the old Duda blog also exposed (their og:url values). VERIFY they resolved on the old site.
+[[redirects]]
+  from = "/my-post6fb72cbc"
+  to = "/blog-povedenie-deca/"
+  status = 301
+
+[[redirects]]
+  from = "/my-post0b4c6c60"
+  to = "/blog-pravila-plavna-rech/"
+  status = 301
+
+[[redirects]]
+  from = "/recheva-dispraksia"
+  to = "/blog-recheva-dispraksia/"
+  status = 301
+
+[[redirects]]
+  from = "/copy-of"
+  to = "/ezikovo-razvitie-na-deteto/"
+  status = 301
+
+[[redirects]]
+  from = "/my-post"
+  to = "/umenia-predi-uchilishte/"
+  status = 301
+
+[[redirects]]
+  from = "/make-the-most-of-the-season-by-following-these-simple-guidelines"
+  to = "/blog-logopedia/"
+  status = 301
+
+[[redirects]]
+  from = "/keep-in-touch-with-site-visitors-and-boost-loyalty"
+  to = "/psihologichna-terapia/"
+  status = 301

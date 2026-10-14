@@ -5,13 +5,15 @@ layout: base.njk
 <article class="post"><div class="wrap">
 <p><a href="/blog/">&larr; Всички статии</a></p>
 <h1>{{ title }}</h1>
-<p class="meta">{% for a in authorList %}<a href="/specialisti/{{ a.slug }}/">{{ a.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %} · <time datetime="{{ published }}">{{ published | bgDate }}</time></p>
-<p class="lead">{{ lead }}</p>
+<p class="meta">{% for a in authorList %}<a href="/specialisti/{{ a.slug }}/">{{ a.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% if authorList.length %} · {% endif %}<time datetime="{{ published }}">{{ published | bgDate }}</time></p>
+{% if showLead != false %}<p class="lead">{{ lead }}</p>{% endif %}
+{% if kind != "article" %}
 {% if imgs and imgs.length %}
 <div class="post-pages">{% for f in imgs %}<a href="/images/blog/{{ page.fileSlug }}/{{ f }}"><img src="/images/blog/{{ page.fileSlug }}/{{ f }}" alt="{{ title }} – страница {{ loop.index }} от {{ loop.length }}"{% if loop.index > 1 %} loading="lazy"{% endif %} decoding="async" /></a>{% endfor %}</div>
 {% else %}
 <p><span class="ph">[снимки на брошурата – очакват се от автора]</span></p>
 {% endif %}
-{{ content | safe }}
-{% if closing %}<div class="post-closing"><p>{{ closing }}</p><p><a href="/specialisti/{{ authorList[0].slug }}/"><strong>{{ authorList[0].titleRole }} {{ authorList[0].name }}</strong></a></p></div>{% endif %}
+{% endif %}
+<div class="post-body">{{ content | safe }}</div>
+{% if closing %}<div class="post-closing"><p>{{ closing }}</p>{% if authorList.length %}<p><a href="/specialisti/{{ authorList[0].slug }}/"><strong>{{ authorList[0].titleRole }} {{ authorList[0].name }}</strong></a></p>{% endif %}</div>{% endif %}
 </div></article>
