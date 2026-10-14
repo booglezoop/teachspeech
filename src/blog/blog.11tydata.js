@@ -19,7 +19,7 @@ export default {
       return list;
     },
     authorList: (data) =>
-      data.authors.map((slug) => {
+      (data.authors ?? []).map((slug) => {
         const s = data.specialists.find((x) => x.slug === slug);
         if (!s) throw new Error(`${data.page.inputPath}: unknown author "${slug}"`);
         return s;

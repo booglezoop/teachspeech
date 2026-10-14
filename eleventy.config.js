@@ -15,11 +15,16 @@ export default function (eleventyConfig) {
       }
     }
   }
-  // Blog: posts live in src/blog/*.md, newest first (ISO date strings sort correctly)
+  // Blog: posts live in src/blog/*.md, newest first. Same-day posts: higher `order` first, then file path.
   eleventyConfig.addCollection("posts", (api) =>
     api
       .getFilteredByGlob("src/blog/*.md")
-      .sort((a, b) => b.data.published.localeCompare(a.data.published)),
+      .sort(
+        (a, b) =>
+          b.data.published.localeCompare(a.data.published) ||
+          (b.data.order ?? 0) - (a.data.order ?? 0) ||
+          a.inputPath.localeCompare(b.inputPath),
+      ),
   );
   eleventyConfig.addFilter("bgDate", (iso) =>
     new Intl.DateTimeFormat("bg-BG", {

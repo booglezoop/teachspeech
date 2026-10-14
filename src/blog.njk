@@ -9,7 +9,7 @@ permalink: /blog/
 <section><div class="wrap">
 <ol class="postgrid">
 {% for p in collections.posts %}{% set imgs = blogImages[p.fileSlug] %}<li class="postcard">
-<div class="thumb">{% if imgs and imgs.length %}<img src="/images/blog/{{ p.fileSlug }}/{{ imgs[0] }}" alt=""{% if loop.index > 2 %} loading="lazy"{% endif %} decoding="async" />{% else %}<span class="ph">[снимка на брошурата]</span>{% endif %}</div>
+<div class="thumb">{% if imgs and imgs.length %}<img src="/images/blog/{{ p.fileSlug }}/{{ imgs[0] }}" alt=""{% if loop.index > 2 %} loading="lazy"{% endif %} decoding="async" />{% else %}<span class="ph">{% if p.data.kind == "article" %}[снимка]{% else %}[снимка на брошурата]{% endif %}</span>{% endif %}</div>
 <div class="postcard-meta"><span class="pills">{% for c in p.data.categoryList %}<span class="pill">{{ c }}</span>{% endfor %}</span><time datetime="{{ p.data.published }}">{{ p.data.published | bgDate }}</time></div>
 <h2><a href="{{ p.url }}">{{ p.data.title }}</a></h2>
 <p>{{ p.data.lead }}</p></li>
