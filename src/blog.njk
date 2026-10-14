@@ -7,8 +7,10 @@ permalink: /blog/
 <section class="hero compact"><div class="wrap"><h1>Блог</h1>
 <p class="lead">Стараем се да поднесем полезна информация на разбираем език по теми, свързани с логопедия, психология, образование и възпитание на децата.</p></div></section>
 <section><div class="wrap">
-<ol class="postlist">
-{% for p in collections.posts %}<li><p class="meta"><time datetime="{{ p.data.published }}">{{ p.data.published | bgDate }}</time> · {% for a in p.data.authorList %}{{ a.name }}{% if not loop.last %}, {% endif %}{% endfor %}</p>
+<ol class="postgrid">
+{% for p in collections.posts %}{% set imgs = blogImages[p.fileSlug] %}<li class="postcard">
+<div class="thumb">{% if imgs and imgs.length %}<img src="/images/blog/{{ p.fileSlug }}/{{ imgs[0] }}" alt=""{% if loop.index > 2 %} loading="lazy"{% endif %} decoding="async" />{% else %}<span class="ph">[снимка на брошурата]</span>{% endif %}</div>
+<div class="postcard-meta"><span class="pills">{% for c in p.data.categoryList %}<span class="pill">{{ c }}</span>{% endfor %}</span><time datetime="{{ p.data.published }}">{{ p.data.published | bgDate }}</time></div>
 <h2><a href="{{ p.url }}">{{ p.data.title }}</a></h2>
 <p>{{ p.data.lead }}</p></li>
 {% endfor %}
