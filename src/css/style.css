@@ -234,7 +234,7 @@ nav a:hover {
 .navdd > a {
   display: block;
 }
-.navdd ul {
+.navdd > ul {
   display: none;
   position: absolute;
   left: -12px;
@@ -248,9 +248,27 @@ nav a:hover {
   border-radius: 6px;
   box-shadow: 0 12px 32px rgba(27, 42, 46, 0.14);
 }
-.navdd:hover ul,
-.navdd:focus-within ul {
+.navdd:hover > ul,
+.navdd:focus-within > ul {
   display: block;
+}
+.navdd ul ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.navdd .grp > span {
+  display: block;
+  padding: 8px 12px 2px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted, #5b665f);
+}
+.navdd .grp + .grp {
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid var(--line);
 }
 .navdd li a {
   display: block;

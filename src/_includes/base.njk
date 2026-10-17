@@ -34,7 +34,7 @@
           />
         </a>
         <nav aria-label="Основно меню">
-          <a href="/#pomosht">С какво помагаме</a><div class="navdd"><a href="/#specialisti">Специалисти</a><ul>{% for s in specialists %}<li><a href="/specialisti/{{ s.slug }}/">{{ s.name }}</a></li>{% endfor %}</ul></div><a href="/uslugi/">Услуги</a><a href="/#ceni">Цени</a><a href="/#kontakti">Контакти</a><a href="/blog/">Блог</a>
+          <a href="/#pomosht">С какво помагаме</a><div class="navdd"><a href="/#specialisti">Специалисти</a><ul><li class="grp"><span>Логопеди</span><ul>{% for s in specialists %}{% if s.titleRole == "Логопед" %}<li><a href="/specialisti/{{ s.slug }}/">{{ s.name }}</a></li>{% endif %}{% endfor %}</ul></li><li class="grp"><span>Психолози</span><ul>{% for s in specialists %}{% if s.titleRole == "Психолог" %}<li><a href="/specialisti/{{ s.slug }}/">{{ s.name }}</a></li>{% endif %}{% endfor %}</ul></li></ul></div><a href="/uslugi/">Услуги</a><a href="/#ceni">Цени</a><a href="/#kontakti">Контакти</a><a href="/blog/">Блог</a>
         </nav>
         <details class="callmenu"><summary class="btn">Обади се</summary><ul>{% for s in specialists %}<li><a href="tel:{{ s.phoneHref }}"><strong>{{ s.name }}</strong><span>{{ s.phone }}</span></a></li>{% endfor %}</ul></details>
       </div>
