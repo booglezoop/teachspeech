@@ -62,7 +62,8 @@
     "titleRole": "Логопед",
     "photo": "/images/specialists/svetoslava-chausheva.webp",
     "photoAlt": "Светослава Чаушева, логопед",
-    "facebook": "https://www.facebook.com/logopedchausheva"
+    "facebook": "https://www.facebook.com/logopedchausheva",
+    "viber": true
   },
   {
     "slug": "yurka-doneva",
@@ -106,7 +107,8 @@
     "titleRole": "Логопед",
     "photo": "/images/specialists/yurka-doneva.webp",
     "photoAlt": "Юрка Донева, логопед",
-    "facebook": "https://www.facebook.com/logopeddoneva"
+    "facebook": "https://www.facebook.com/logopeddoneva",
+    "viber": true
   },
   {
     "slug": "iva-baneva",
@@ -144,6 +146,7 @@
     "titleRole": "Психолог",
     "photo": "/images/specialists/iva-baneva.webp",
     "photoAlt": "Ива Бънева, психолог",
-    "facebook": "https://www.facebook.com/psihologIvaBaneva"
+    "facebook": "https://www.facebook.com/psihologIvaBaneva",
+    "viber": true
   }
 ]
