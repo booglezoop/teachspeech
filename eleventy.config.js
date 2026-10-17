@@ -39,6 +39,10 @@ export default function (eleventyConfig) {
     const safeAlt = String(alt).replaceAll('"', "&quot;");
     return `<figure class="post-figure"><img src="/images/blog/${slug}/${file}" alt="${safeAlt}" loading="lazy" decoding="async" /></figure>`;
   });
+  // Posts written by one specialist (front matter `authors` holds specialist slugs).
+  eleventyConfig.addFilter("postsBy", (posts, slug) =>
+    posts.filter((p) => (p.data.authors ?? []).includes(slug)),
+  );
   eleventyConfig.addFilter("bgDate", (iso) =>
     new Intl.DateTimeFormat("bg-BG", {
       day: "numeric",

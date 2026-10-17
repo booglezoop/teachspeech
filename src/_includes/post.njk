@@ -2,7 +2,7 @@
 layout: base.njk
 ---
 {% set imgs = blogImages[page.fileSlug] %}
-<article class="post{% if toc %} has-toc{% endif %}"><div class="wrap">
+<article class="post{% if toc %} has-toc{% endif %}{% if kind == "article" %} post-article{% endif %}"><div class="wrap">
 <p><a href="/blog/">&larr; Всички статии</a></p>
 <h1>{{ title }}</h1>
 <p class="meta">{% for a in authorList %}<a href="/specialisti/{{ a.slug }}/">{{ a.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% if authorList.length %} · {% endif %}<time datetime="{{ published }}">{{ published | bgDate }}</time></p>
@@ -17,5 +17,5 @@ layout: base.njk
 {% if toc %}<div class="post-layout"><div class="post-body">{{ content | safe }}</div>
 <nav class="contents" aria-label="Съдържание на статията"><h2>В статията</h2><ol>{% for t in toc %}<li><a href="#{{ t.id }}">{{ t.label }}</a></li>{% endfor %}</ol></nav></div>
 {% else %}<div class="post-body">{{ content | safe }}</div>{% endif %}
-{% if closing %}<div class="post-closing"><p>{{ closing }}</p>{% if authorList.length %}<p><a href="/specialisti/{{ authorList[0].slug }}/"><strong>{{ authorList[0].titleRole }} {{ authorList[0].name }}</strong></a></p>{% endif %}</div>{% endif %}
+{% if closing %}<div class="post-closing{% if kind == "article" %} closing-panel{% endif %}"><p>{{ closing }}</p>{% if authorList.length %}<p><a href="/specialisti/{{ authorList[0].slug }}/"><strong>{{ authorList[0].titleRole }} {{ authorList[0].name }}</strong></a></p>{% endif %}</div>{% endif %}
 </div></article>
