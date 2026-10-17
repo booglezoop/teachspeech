@@ -1064,3 +1064,80 @@ footer .wrap {
     padding: 22px;
   }
 }
+
+/* ===== Article posts without section structure (same look as the dyslexia article) ===== */
+.post-article .post-body > p:first-child {
+  font-size: 1.08rem;
+}
+.post-article .post-body ul {
+  list-style: none;
+  margin: 1em 0 1.5em;
+  padding: 0;
+}
+.post-article .post-body ul li {
+  position: relative;
+  margin: 0 0 12px;
+  padding-left: 28px;
+}
+.post-article .post-body ul li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.85em;
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  background: var(--accent);
+  transform: translateY(-50%) rotate(45deg);
+}
+.post-article .post-figure img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.post-article .post-closing.closing-panel {
+  border: 0;
+  padding: 32px;
+  margin-top: 3em;
+}
+.post-article .post-closing.closing-panel a {
+  color: #fff;
+}
+@media (max-width: 520px) {
+  .post-article .post-closing.closing-panel {
+    padding: 22px;
+  }
+}
+
+/* ===== Specialist profile: list of their articles ===== */
+.postlist {
+  list-style: none;
+  margin: 0 0 1em;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.postlist li {
+  display: grid;
+  gap: 8px 32px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+@media (min-width: 760px) {
+  .postlist li {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+  }
+}
+.postlist > li > a {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+.postlist-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
