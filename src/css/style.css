@@ -213,6 +213,7 @@ header .wrap {
 }
 nav {
   display: none;
+  align-items: center;
   gap: 30px;
   font-size: 0.93rem;
   font-weight: 500;
@@ -229,6 +230,9 @@ nav a:hover {
 /* nav dropdown */
 .navdd {
   position: relative;
+}
+.navdd > a {
+  display: block;
 }
 .navdd ul {
   display: none;
