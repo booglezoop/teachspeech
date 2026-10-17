@@ -1,0 +1,2 @@
+# Always store and check out text files with LF so Prettier behaves the same on Windows, Linux and CI.
+* text=auto eol=lf
